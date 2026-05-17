@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 108 108" role="img" aria-labelledby="hexring-title hexring-desc">
+  <title id="hexring-title">NeurHAL hexring mark</title>
+  <desc id="hexring-desc">Standalone reusable NeurHAL hexring mark for investor portal and future Dex shell reuse.</desc>
+  <defs>
+    <linearGradient id="brand-hexring-a" x1="15" y1="12" x2="86" y2="88">
+      <stop offset="0%" stop-color="#70f2d2"/>
+      <stop offset="52%" stop-color="#d9c579"/>
+      <stop offset="100%" stop-color="#8ea7ff"/>
+    </linearGradient>
+    <linearGradient id="brand-hexring-b" x1="82" y1="14" x2="18" y2="86">
+      <stop offset="0%" stop-color="#f4fbf8"/>
+      <stop offset="50%" stop-color="#70f2d2"/>
+      <stop offset="100%" stop-color="#d9c579"/>
+    </linearGradient>
+  </defs>
+  <path d="M88 28 88 72 50 94 12 72 12 28 50 6Z" fill="rgba(112, 242, 210, 0.035)" stroke="rgba(112, 242, 210, 0.5)" stroke-width="2.2" stroke-linejoin="round"/>
+  <circle cx="50" cy="50" r="31" fill="none" stroke="url(#brand-hexring-a)" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16.2 5" stroke-dashoffset="2">
+    <animate attributeName="stroke-dashoffset" values="2;-40.4" dur="11s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="50" cy="50" r="22" fill="none" stroke="url(#brand-hexring-b)" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="11.7 4" stroke-dashoffset="5" opacity="0.86">
+    <animate attributeName="stroke-dashoffset" values="5;36.4" dur="8.5s" repeatCount="indefinite"/>
+  </circle>
+  <style>
+    .hexring-nucleus-spin {
+      transform-box: view-box;
+      transform-origin: 50px 50px;
+      animation: hexringNucleusCw 9.5s linear infinite;
+    }
+
+    @keyframes hexringNucleusCw {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  <g class="hexring-nucleus-spin">
+    <path d="M50 35.8 57.8 39.8 63.4 46.7 62.2 55.2 55.9 62.1 47.6 63.4 39.8 59.5 35.5 51.6 37.4 43.2 43.1 37.3Z" fill="rgba(124, 195, 255, 0.44)" stroke="rgba(178, 226, 255, 0.82)" stroke-width="1.4">
+      <animate attributeName="opacity" values="0.82;0.94;0.82" dur="6.8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

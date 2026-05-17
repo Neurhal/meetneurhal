@@ -1,0 +1,271 @@
+<section class="page" id="sentinel" data-page="sentinel" aria-labelledby="sentinel-title">
+  <section class="page-hero sentinel-hero-card pain-hero">
+    <h1 class="eyebrow" id="sentinel-title">Vulnerability assessment needs evidence before action</h1>
+    <p>
+      A vulnerability finding can prove that risk exists without making the next step obvious. Decisions still depend
+      on whether the surrounding evidence is clear enough for reviewers to act with confidence.
+    </p>
+    <p>
+      Problems begin when a finding arrives without enough context attached to it. Teams may know something is wrong
+      while still being unsure what systems are affected, who owns the issue, or how serious the operational impact
+      might become.
+    </p>
+    <p>
+      <strong>As workflows move faster across systems and tools, that context can quickly become fragmented.</strong>
+    </p>
+  </section>
+
+  <section class="narrative-block security-campaign-focus governance-pattern-tile" aria-labelledby="sentinel-schools-title">
+    <h2 id="sentinel-schools-title">The finding is not the decision</h2>
+    <div class="governance-tile-body">
+      <p>
+        Discovery creates pressure, not closure. A finding may prove that risk exists while still lacking enough
+        context around scope, ownership, operational impact, or recovery posture for reviewers to determine what
+        action is justified. The challenge is preserving enough evidence and decision continuity for security
+        responses to remain reviewable as workflows move from discovery into containment, remediation, and release
+        pressure.
+      </p>
+    </div>
+    <div class="sentinel-suite-grid" aria-label="Vulnerability assessment evaluation lanes">
+      <article class="sentinel-suite-card suite-surface">
+        <h2>Surface exposure lanes</h2>
+        <div class="suite-animation surface-map-animation" aria-hidden="true">
+          <span class="surface-internet-edge"></span>
+          <span class="surface-endpoint surface-web" data-label="Route"></span>
+          <span class="surface-endpoint surface-api" data-label="API"></span>
+          <span class="surface-endpoint surface-id" data-label="Auth"></span>
+          <span class="surface-endpoint surface-data" data-label="Data"></span>
+          <span class="surface-hidden-path path-web-api"></span>
+          <span class="surface-hidden-path path-api-id"></span>
+          <span class="surface-hidden-path path-api-data"></span>
+          <span class="surface-tenant-boundary"></span>
+          <span class="surface-probe"></span>
+          <span class="surface-exposure"></span>
+          <span class="surface-scope-record"></span>
+          <span class="surface-containment-tag"></span>
+        </div>
+        <div class="suite-body">
+          <p>
+            Surface findings often look simple at first, but the difficult part is proving where the actual boundary
+            failed once routing, identity, deployment conditions, and operational context are considered. A web or API
+            issue can be real while still being difficult to contain if the tested scope, affected systems, ownership,
+            and supporting evidence are not attached to the finding.
+          </p>
+          <p>
+            The needed record is practical: enough continuity for reviewers to understand what failed, what is
+            affected, what action is justified, and what evidence is sufficient to close the finding without leaving
+            operational risk ambiguous.
+          </p>
+        </div>
+      </article>
+      <article class="sentinel-suite-card suite-artifact">
+        <h2>Artifact and supply-chain lanes</h2>
+        <div class="suite-animation evidence-bag-animation" aria-hidden="true">
+          <span class="evidence-bag"></span>
+          <span class="evidence-file"></span>
+          <span class="evidence-fingerprint"></span>
+          <span class="evidence-tamper-strip"></span>
+          <span class="evidence-hash-lines"></span>
+          <span class="evidence-hold-sticker"></span>
+        </div>
+        <div class="suite-body">
+          <p>
+            Artifact and supply-chain findings are difficult because unsafe material can move through operational
+            workflows faster than the review path around it. By the time teams agree what must stop, the artifact
+            may already have crossed systems, dependencies, or release boundaries, leaving reviewers with incomplete
+            visibility into how it moved or what inherited it.
+          </p>
+          <p>
+            These findings require chain-of-custody continuity. Origin, handling, containment decisions, ownership,
+            and remediation evidence need to remain attached to the artifact while response and review decisions are
+            still active.
+          </p>
+        </div>
+      </article>
+      <article class="sentinel-suite-card suite-release">
+        <h2>Cloud, tool, and release lanes</h2>
+        <div class="suite-animation release-console-animation" aria-hidden="true">
+          <span class="release-throttle release-throttle-cloud" data-label="Cloud"></span>
+          <span class="release-throttle release-throttle-tool" data-label="Tool"></span>
+          <span class="release-throttle release-throttle-gate" data-label="Release"></span>
+          <span class="release-close-gate"></span>
+          <span class="release-impact-pulse"></span>
+          <span class="release-gate-label">Fail</span>
+          <span class="release-warning"></span>
+        </div>
+        <div class="suite-body">
+          <p>
+            Cloud, tool, and release findings are risky because the distance between observation and operational
+            impact can become very small. A finding may begin as inspection and quickly cross into deployment
+            authority, infrastructure access, or release decisions while execution is still moving.
+          </p>
+          <p>
+            The difficult part is preserving continuity as permissions, operational conditions, and release
+            consequences change around the workflow. Reviewers need enough visibility into the affected environment,
+            recovery posture, and approval basis to determine whether execution should safely continue.
+          </p>
+        </div>
+      </article>
+    </div>
+    <section class="domain-evaluation-block security-evaluation-programs" aria-labelledby="security-evaluation-programs-title">
+      <h2 id="security-evaluation-programs-title">Security and Workflow Evaluation Programs</h2>
+      <p>
+        These evaluation programs study whether AI-assisted security and operational workflows remain reviewable,
+        governable, and recoverable under realistic conditions. The focus is on how findings, evidence, and decision
+        paths behave when workflows encounter escalation, failure, abuse, or recovery pressure.
+      </p>
+      <p>
+        The programs do not expose internal procedures or productized automation. They provide controlled assurance
+        scenarios for evaluating whether reviewers can maintain operational judgment, evidence continuity, and
+        recovery visibility while security work is still moving.
+      </p>
+      <div class="evaluation-program-grid" aria-label="Security evaluation programs">
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies whether uploaded artifacts, metadata, and admissibility baselines preserve provenance, handling state, reviewer authority, and screening evidence.">Artifact admissibility</strong>
+          </div>
+          <span class="program-output">Evaluable output: artifact record schema, admissibility decision trace, metadata review rubric.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies malformed documents, embedded content, format anomalies, and large or noisy text as conditions that can disrupt review and safe handling.">Document risk</strong>
+          </div>
+          <span class="program-output">Evaluable output: document screening trace, reviewer decision rubric, containment evidence model.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies dependency, package, release, and certification workflows where provenance, integrity, owners, retest evidence, and release posture must remain inspectable.">Release assurance</strong>
+          </div>
+          <span class="program-output">Evaluable output: release assurance trace, dependency review record, certification evidence packet.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies web routes, links, user-facing flows, application boundaries, and interaction surfaces where review decisions depend on tested scope and affected systems.">Surface integrity</strong>
+          </div>
+          <span class="program-output">Evaluable output: surface boundary definition, interaction trace, escalation and closure rubric.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies secrets, credentials, keys, cloud metadata, environment exposure, and privacy patterns that affect containment, ownership, and recovery decisions.">Exposure review</strong>
+          </div>
+          <span class="program-output">Evaluable output: exposure decision trace, containment record, recovery-path identification score.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies instruction conflicts, prompt injection, tool-use ambiguity, and AI-assisted workflow manipulation as runtime governance and reviewer decision conditions.">LLM guardrails</strong>
+          </div>
+          <span class="program-output">Evaluable output: instruction-boundary scenario, tool-use review trace, intervention-point rubric.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies handoff manipulation, impersonation, reviewer trust confusion, and operational decision deception where ownership and authority must remain legible.">Handoff trust</strong>
+          </div>
+          <span class="program-output">Evaluable output: handoff trust scenario, ownership trace, escalation correctness rubric.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies dangerous automation boundary conditions, command or code execution risk, and application injection conditions as bounded review and intervention scenarios.">Execution boundaries</strong>
+          </div>
+          <span class="program-output">Evaluable output: boundary-control trace, intervention decision rubric, affected-surface record.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies probing behavior, resource exhaustion, noisy inputs, and degraded-state resilience when reviewer decisions depend on system condition and recovery posture.">Resource resilience</strong>
+          </div>
+          <span class="program-output">Evaluable output: degraded-state trace, resilience rubric, intervention success measure.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies finding triage, signature recognition, escalation correctness, remediation routing, retest evidence, and closure quality under accelerated security workflows.">Remediation review</strong>
+          </div>
+          <span class="program-output">Evaluable output: finding record, remediation decision trace, closure evidence rubric.</span>
+        </article>
+      </div>
+      <h2 class="domain-evaluation-subtitle">Runtime risk conditions</h2>
+      <p>
+        NeurHAL groups security study conditions by the reviewer decision they complicate: whether an input can be
+        trusted, whether exposure changes ownership, whether execution authority is still bounded, and whether the
+        response can close with evidence intact.
+      </p>
+      <div class="runtime-risk-group-grid" aria-label="Grouped security runtime risk conditions">
+        <article>
+          <strong>Input ambiguity</strong>
+          <ul>
+            <li>Unicode and glyph ambiguity</li>
+            <li>Format anomalies</li>
+            <li>Obfuscation and encoding</li>
+            <li>URL and link structure</li>
+          </ul>
+        </article>
+        <article>
+          <strong>Exposure and trust</strong>
+          <ul>
+            <li>Secrets and credentials</li>
+            <li>Cloud metadata exposure</li>
+            <li>Privacy leakage</li>
+            <li>Impersonation and handoff confusion</li>
+          </ul>
+        </article>
+        <article>
+          <strong>Execution boundaries</strong>
+          <ul>
+            <li>Prompt injection and guardrails</li>
+            <li>Command and code execution</li>
+            <li>Resource exhaustion and probing</li>
+          </ul>
+        </article>
+        <article>
+          <strong>Assurance closure</strong>
+          <ul>
+            <li>Supply-chain integrity</li>
+            <li>Vulnerability signatures</li>
+            <li>Remediation routing</li>
+            <li>Retest and release evidence</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section class="response-path-lab" aria-labelledby="sentinel-response-lab-title">
+      <div class="response-path-heading">
+        <h2 id="sentinel-response-lab-title">When Vulnerability Findings Are Ready for Review</h2>
+        <p>
+          NeurHAL studies the space between vulnerability detection and operational response, where a finding has to
+          become more than a scan result or isolated proof. A finding may be technically valid while reviewers still
+          lack enough context to determine scope, ownership, affected systems, containment posture, or release impact.
+          The research focus is whether finding records preserve enough evidence, authority, and recovery context for
+          escalation, remediation, retest, and closure decisions to remain reviewable while security work is still
+          moving under operational pressure.
+        </p>
+      </div>
+      <div class="file-scan-lab" aria-label="Vulnerability finding file scan animation">
+        <div class="file-scan-track" aria-hidden="true">
+          <span class="scan-rail"></span>
+          <span class="scan-gate"></span>
+          <span class="record-stack"></span>
+          <span class="quarantine-tray"></span>
+          <span class="scan-file scan-file-web" data-file="WEB"></span>
+          <span class="scan-file scan-file-api" data-file="API"></span>
+          <span class="scan-file scan-file-id" data-file="ID"></span>
+          <span class="scan-file scan-file-pkg" data-file="PKG"></span>
+          <span class="scan-file scan-file-ai" data-file="AI"></span>
+          <span class="scan-file scan-file-flagged" data-file="???"></span>
+        </div>
+      </div>
+      <div class="response-decision-grid" aria-label="Vulnerability assessment research questions">
+        <article>
+          <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="A tested boundary is only meaningful if reviewers can determine where authority, exposure, and operational consequence actually begin and end.">How should a tested boundary be defined?</strong>
+        </article>
+        <article>
+          <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Authority has to remain attached to the finding as conditions change, ownership shifts, and workflows move across systems and teams.">What authority must stay attached to a finding?</strong>
+        </article>
+        <article>
+          <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="A finding becomes decision-ready when reviewers can reliably judge operational consequence without reconstructing missing context.">Which evidence makes a claim decision-ready?</strong>
+        </article>
+        <article>
+          <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Closure requires enough continuity for reviewers to determine that risk, recovery posture, and operational impact are understood and accepted.">What evidence closes the response path?</strong>
+        </article>
+      </div>
+    </section>
+  </section>
+
+</section>

@@ -1,0 +1,182 @@
+<section class="page" id="trustworthy" data-page="trustworthy" aria-labelledby="trustworthy-title">
+  <section class="page-hero">
+    <h1 class="eyebrow" id="trustworthy-title">Runtime Governance for AI-Assisted Work</h1>
+    <p>
+      AI-assisted work can move faster than the environments around it were designed to govern.
+    </p>
+    <p>
+      As workflows accelerate across systems and teams, the operational context surrounding that work can fragment
+      or disappear while execution is still underway. In many environments, governance is strongest at the beginning
+      and end of a workflow but weakest during execution itself. Ownership shifts, evidence scatters, and reviewers
+      gradually lose visibility into whether work should continue safely or requires intervention.
+    </p>
+    <p>
+      <strong>The operational risk emerges between intent and outcome while work is still moving.</strong>
+    </p>
+  </section>
+  <section class="narrative-block governance-pattern-tile governance-intro-tile" aria-labelledby="governance-review-path-title">
+    <h2 id="governance-review-path-title">Stale Authority, Scattered Evidence, and Broken Handoffs</h2>
+    <div class="governance-tile-body">
+      <p>
+        AI-assisted work increasingly crosses the boundary between response and execution, and the operational
+        context surrounding that work can become fragmented while execution is still underway. Many failures emerge
+        not at the beginning or end of a workflow, but during delegation, escalation, handoff, or shifting ownership
+        when reviewers lose visibility into whether work should continue safely. The challenge is preserving enough
+        authority, evidence continuity, and recovery context for governance to remain attached to execution while
+        work is still moving.
+      </p>
+    </div>
+  </section>
+
+  <section class="narrative-block governance-pattern-tile" aria-labelledby="governable-execution-title">
+    <h2 id="governable-execution-title">Stale Authority Concerns</h2>
+    <article class="broken-flow-card broken-authority stale-authority-card">
+      <div class="broken-flow-track" aria-hidden="true">
+        <span class="flow-node">Request</span>
+        <span class="flow-node">Draft</span>
+        <span class="flow-node node-warning">Privilege</span>
+        <span class="flow-node node-danger">Impact</span>
+        <span class="flow-boundary"></span>
+        <span class="flow-packet"></span>
+        <span class="flow-leak"></span>
+      </div>
+    </article>
+    <div class="governance-tile-body">
+      <p>
+        Stale authority emerges when work changes faster than its approval. A task may begin inside one boundary and
+        gradually expand into broader operational impact while the original permissions and assumptions remain
+        unchanged.
+      </p>
+      <p>
+        The issue is whether authority still matches the work being performed. As scope shifts, reviewers can lose
+        visibility into when execution crossed into a different level of consequence or when intervention became
+        necessary.
+      </p>
+    </div>
+  </section>
+
+  <section class="narrative-block governance-pattern-tile" aria-labelledby="evidence-assurance-title">
+    <h2 id="evidence-assurance-title">Scattered Evidence</h2>
+    <article class="broken-flow-card broken-evidence scattered-evidence-card">
+      <div class="broken-flow-track" aria-hidden="true">
+        <span class="flow-node">Ticket</span>
+        <span class="flow-node node-muted">Log</span>
+        <span class="flow-node node-muted">Repo</span>
+        <span class="flow-node node-warning">Chat</span>
+        <span class="evidence-bubble bubble-a"></span>
+        <span class="evidence-bubble bubble-b"></span>
+        <span class="evidence-bubble bubble-c"></span>
+        <span class="evidence-bubble bubble-d"></span>
+        <span class="evidence-bubble bubble-e"></span>
+        <span class="evidence-bubble bubble-f"></span>
+        <span class="evidence-shard shard-a"></span>
+        <span class="evidence-shard shard-b"></span>
+        <span class="evidence-shard shard-c"></span>
+        <span class="review-gap"></span>
+        <span class="flow-packet"></span>
+      </div>
+    </article>
+    <div class="governance-tile-body">
+      <p>
+        Scattered evidence appears when the record exists, but cannot support reliable judgment. Intent, approvals,
+        tool activity, and review context can fragment across different systems while execution is still moving,
+        making the operational path behind the work difficult to reconstruct.
+      </p>
+      <p>
+        A workflow may still reach a technically valid final state while carrying very different operational risk
+        from another workflow that appears identical on the surface. The difference often becomes visible only when
+        the full execution path and surrounding context are examined together.
+      </p>
+    </div>
+  </section>
+
+  <section class="narrative-block governance-pattern-tile" aria-labelledby="distributed-governance-title">
+    <h2 id="distributed-governance-title">Broken Handoffs</h2>
+    <article class="broken-flow-card broken-handoff broken-handoff-card">
+      <div class="broken-flow-track" aria-hidden="true">
+        <span class="flow-node">Team</span>
+        <span class="flow-node">Tool</span>
+        <span class="flow-node node-warning">Vendor</span>
+        <span class="flow-node node-danger">Review</span>
+        <span class="context-drop"></span>
+        <span class="flow-packet"></span>
+        <span class="task-ghost"></span>
+      </div>
+    </article>
+    <div class="governance-tile-body">
+      <p>
+        Broken handoffs occur when AI-assisted work reaches the next system, team, tool, vendor, or reviewer without
+        the context that made the previous step acceptable. The task itself may arrive intact while the authority,
+        evidence, assumptions, or recovery posture attached to it do not.
+      </p>
+      <p>
+        The risk is that execution continues after the governing context has already fragmented. A workflow may
+        still appear technically valid even after visibility into the original operating conditions has been lost,
+        leaving reviewers unable to determine whether work should continue safely or requires intervention.
+      </p>
+    </div>
+  </section>
+
+  <section class="research-finish-card trustworthy-close-card" aria-labelledby="trustworthy-research-title">
+    <div>
+      <h2 id="trustworthy-research-title">Evaluating Runtime Assurance Records</h2>
+      <p>
+        NeurHAL studies the records and controls that operate between AI capability and operational consequence,
+        focusing on whether authority, evidence, ownership, decision state, and recovery posture remain durable
+        enough for reviewers to identify stale authority, fragmented evidence, broken handoffs, intervention points,
+        and recovery conditions while AI-assisted work is still moving through real operational workflows.
+      </p>
+    </div>
+    <div class="governance-tabs-lab" aria-label="Governance context synchronization animation">
+      <div class="governance-tab-strip">
+        <span
+          class="governance-tab tab-authority section-tooltip-trigger"
+          tabindex="0"
+          data-section-tooltip="Authority is the approval basis, scope, constraints, and expiry condition that determine whether work is still allowed to continue."
+        >Authority</span>
+        <span
+          class="governance-tab tab-evidence section-tooltip-trigger"
+          tabindex="0"
+          data-section-tooltip="Evidence is the surviving record: request, reproduction, tool path, artifacts, logs, tests, and decisions needed for review."
+        >Evidence</span>
+        <span
+          class="governance-tab tab-owner section-tooltip-trigger"
+          tabindex="0"
+          data-section-tooltip="Owner is the accountable person or team able to pause, redirect, approve, remediate, or accept residual risk."
+        >Owner</span>
+        <span
+          class="governance-tab tab-recovery section-tooltip-trigger"
+          tabindex="0"
+          data-section-tooltip="Recovery is the visible path for containment, rollback, retest, escalation, and safe resumption when confidence drops."
+        >Recovery</span>
+      </div>
+      <div class="governance-stage" aria-hidden="true">
+        <span class="governance-thread thread-authority"></span>
+        <span class="governance-thread thread-evidence"></span>
+        <span class="governance-thread thread-owner"></span>
+        <span class="governance-thread thread-recovery"></span>
+        <span class="governance-signal signal-authority"></span>
+        <span class="governance-signal signal-evidence"></span>
+        <span class="governance-signal signal-owner"></span>
+        <span class="governance-signal signal-recovery"></span>
+        <span class="governance-core"></span>
+        <span class="governance-decision"></span>
+      </div>
+    </div>
+    <div class="research-finish-grid" aria-label="AI oversight research questions">
+      <article>
+        <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Operational failures often emerge gradually through stale authority, fragmented evidence, or degraded handoffs before the final outcome appears incorrect.">Which failure patterns should reviewers recognize?</strong>
+      </article>
+      <article>
+        <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Work becomes difficult to govern when operational context does not move with the finding, change, or decision path during execution.">What evidence should travel before real action?</strong>
+      </article>
+      <article>
+        <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Many governance controls work at the beginning of a workflow but weaken once ownership, authority, or operational conditions begin to shift.">Which controls stay useful during execution?</strong>
+      </article>
+      <article>
+        <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Oversight becomes difficult to evaluate when reviewer confidence, escalation posture, and recovery visibility disappear between systems and handoffs.">What makes oversight measurable as work moves?</strong>
+      </article>
+    </div>
+  </section>
+
+</section>

@@ -1,0 +1,189 @@
+<section class="page" id="codebase" data-page="codebase" aria-labelledby="codebase-title">
+  <section class="page-hero calliope-hero-card pain-hero">
+    <h1 class="eyebrow" id="codebase-title">Codebase optimization needs confidence before change</h1>
+    <p>
+      Optimization is rarely blocked by a shortage of ideas.
+    </p>
+    <p>
+      It is blocked by uncertainty around what a change touches, how reliable the evidence is, and whether the team
+      can recover cleanly if assumptions are wrong. Legacy systems and rushed code create the same problem: changes
+      that appear useful but arrive without enough context, ownership, or test confidence to release safely.
+    </p>
+    <p>
+      The challenge is keeping modernization work reviewable and recoverable while changes are still moving under
+      release pressure.
+    </p>
+  </section>
+
+  <section class="narrative-block optimization-workboard" aria-labelledby="unicron-title">
+    <div class="optimization-lab" aria-label="Codebase optimization confidence record builder">
+      <div class="optimization-lab-copy">
+        <h2 id="unicron-title">From candidate backlog to review confidence</h2>
+        <p>
+          A candidate backlog is not the same as an optimization plan. Changes may appear valuable while still
+          lacking enough context around dependencies, ownership, risk, or test confidence for reviewers to determine
+          what should move next. The challenge is turning improvement candidates into reviewable work packets that
+          preserve enough evidence, sequencing rationale, and recovery posture for modernization decisions to remain
+          governable as changes move toward release.
+        </p>
+      </div>
+    </div>
+    <div class="optimization-pain-grid" aria-label="Codebase optimization pain points">
+      <article class="optimization-pain-card optimization-baseline-pain">
+        <h2>Baseline blind spots</h2>
+        <div class="optimization-pain-animation baseline-map-animation" aria-hidden="true">
+          <span class="baseline-node baseline-core"></span>
+          <span class="baseline-node baseline-api"></span>
+          <span class="baseline-node baseline-data"></span>
+          <span class="baseline-node baseline-release"></span>
+          <span class="baseline-link baseline-link-a"></span>
+          <span class="baseline-link baseline-link-b"></span>
+          <span class="baseline-link baseline-link-c"></span>
+          <span class="baseline-artifact baseline-artifact-a"></span>
+          <span class="baseline-artifact baseline-artifact-b"></span>
+          <span class="baseline-artifact baseline-artifact-c"></span>
+          <span class="baseline-artifact baseline-artifact-d"></span>
+          <span class="baseline-artifact baseline-artifact-e"></span>
+          <span class="baseline-artifact baseline-artifact-f"></span>
+          <span class="baseline-hotspot"></span>
+          <span class="baseline-scan"></span>
+        </div>
+        <div class="optimization-pain-body">
+          <p>
+            Optimization work becomes fragile when the existing system is treated as self-explanatory. Reviewers
+            may see the proposed change while missing the behavior, dependencies, or release assumptions it quietly
+            relies on. A small cleanup or dependency update can introduce broader consequences that are difficult to
+            recognize without enough surrounding context.
+          </p>
+          <p>
+            The challenge often begins with the missing baseline. Without a visible map of the current system,
+            reviewers are forced to reconstruct context before they can judge risk, confidence, or whether the
+            candidate should move at all.
+          </p>
+        </div>
+      </article>
+
+      <article class="optimization-pain-card optimization-rank-pain">
+        <h2>Unranked candidate pressure</h2>
+        <div class="optimization-pain-animation candidate-stack-animation" aria-hidden="true">
+          <span class="candidate-pressure-band"></span>
+          <span class="candidate-priority-slot">Next</span>
+          <span class="candidate-question">?</span>
+          <span class="candidate-card candidate-card-a">Refactor</span>
+          <span class="candidate-card candidate-card-b">Perf</span>
+          <span class="candidate-card candidate-card-c">Tests</span>
+          <span class="candidate-card candidate-card-d">Deps</span>
+          <span class="candidate-evidence candidate-evidence-a"></span>
+          <span class="candidate-evidence candidate-evidence-b"></span>
+          <span class="candidate-evidence candidate-evidence-c"></span>
+        </div>
+        <div class="optimization-pain-body">
+          <p>
+            A backlog can look strategic because every item has a name. What it often lacks is a defensible order:
+            enough evidence, ownership, and recovery context to explain why one candidate should move before another.
+            Without that context, sequencing starts to follow pressure instead of judgment.
+          </p>
+          <p>
+            The easiest change or most visible issue can move forward while higher-value or lower-risk work remains
+            buried in the same queue. Reviewers need enough visibility into risk, scope, dependencies, and rollback
+            posture before a candidate becomes the next responsible move.
+          </p>
+        </div>
+      </article>
+
+      <article class="optimization-pain-card optimization-packet-pain">
+        <h2>Review packets that arrive incomplete</h2>
+        <div class="optimization-pain-animation packet-handoff-animation" aria-hidden="true">
+          <span class="packet-shell"></span>
+          <span class="packet-piece packet-piece-a">Scope</span>
+          <span class="packet-piece packet-piece-b">Tests</span>
+          <span class="packet-piece packet-piece-c">Owner</span>
+          <span class="packet-piece packet-piece-d">Rollback</span>
+          <span class="packet-gate"></span>
+        </div>
+        <div class="optimization-pain-body">
+          <p>
+            Even a well-ranked candidate can fail at handoff if it arrives as a broad instruction instead of a
+            reviewable packet. Reviewers are left reconstructing missing context while release pressure is already
+            building, making it difficult to understand the true scope or recovery impact of the change.
+          </p>
+          <p>
+            Incomplete packets force a difficult trade. Teams either stop to rebuild the missing context, or they
+            continue with uncertainty attached to the release itself. A candidate only becomes truly reviewable when
+            enough operational context remains attached to the work as it moves forward.
+          </p>
+        </div>
+      </article>
+    </div>
+    <section class="domain-evaluation-block modernization-evaluation-programs" aria-labelledby="modernization-evaluation-programs-title">
+      <h2 id="modernization-evaluation-programs-title">Legacy Modernization Assurance Evaluation</h2>
+      <p>
+        This evaluation program studies whether modernization and sequencing decisions remain governable as baseline
+        context, candidate evidence, rollback posture, and recovery paths move with the work. The focus is the
+        candidate record itself: the current behavior it depends on, the systems it touches, the evidence supporting
+        its priority, and the recovery options available if the change must pause, split, or roll back.
+      </p>
+      <div class="evaluation-program-grid evaluation-program-grid-single" aria-label="Codebase modernization evaluation program">
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies legacy mission software modernization through baseline mapping, candidate ranking, refactor planning, evidence-bound workboards, sequencing, rollback, and recovery preservation.">Modernization assurance</strong>
+          </div>
+          <span class="program-output">Evaluable output: modernization workboard, candidate confidence record, rollback and recovery model.</span>
+        </article>
+        <article>
+          <div class="program-card-heading">
+            <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Studies dependency transitions, package integrity, test confidence, release assumptions, affected surfaces, sequencing pressure, and recovery posture as review conditions.">Modernization risk</strong>
+          </div>
+          <span class="program-output">Evaluable output: candidate sequencing trace, review burden rubric, rollback-readiness score.</span>
+        </article>
+      </div>
+    </section>
+    <section class="research-finish-card optimization-close-card" aria-labelledby="codebase-research-close-title">
+      <div>
+        <h2 id="codebase-research-close-title">When Optimization Candidates Are Ready for Review</h2>
+        <p>
+          NeurHAL studies the point where an optimization idea has to become more than another plausible backlog
+          item. A candidate may appear useful while reviewers still lack enough context around current behavior,
+          affected systems, dependency paths, test confidence, or recovery posture to determine whether the change
+          should move safely toward implementation or release. The research focus is whether candidate records
+          preserve enough evidence, sequencing rationale, and rollback context for modernization decisions to remain
+          reviewable while optimization work is still moving through operational workflows.
+        </p>
+      </div>
+      <div class="broken-kanban-lab" aria-label="Broken optimization workboard animation">
+        <div class="kanban-column kanban-backlog">
+          <span>Backlog</span>
+          <i class="kanban-card kanban-card-a" data-note="cleanup"></i>
+          <i class="kanban-card kanban-card-b" data-note="perf"></i>
+          <i class="kanban-card kanban-card-c" data-note="tests?"></i>
+        </div>
+        <div class="kanban-column kanban-review">
+          <span>Review</span>
+          <i class="kanban-card kanban-card-d" data-note="scope?"></i>
+          <i class="kanban-card kanban-card-e" data-note="owner?"></i>
+        </div>
+        <div class="kanban-column kanban-release">
+          <span>Release</span>
+          <i class="kanban-card kanban-card-f" data-note="hold"></i>
+        </div>
+        <span class="kanban-gap" aria-hidden="true"></span>
+        <span class="kanban-orphan" aria-hidden="true">risk?</span>
+      </div>
+      <div class="research-finish-grid" aria-label="Codebase optimization research questions">
+        <article>
+          <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Reviewers need enough visibility into current behavior and operational dependencies to understand what a change might disturb before it moves toward release.">What baseline makes a change reviewable?</strong>
+        </article>
+        <article>
+          <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Backlogs become difficult to govern when movement follows urgency or visibility instead of evidence, operational value, and recovery confidence.">Which signals justify sequencing?</strong>
+        </article>
+        <article>
+          <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Changes become easier to review and recover when work is scoped into bounded packets that preserve enough context for reviewers to understand operational impact.">How small should a review packet become?</strong>
+        </article>
+        <article>
+          <strong class="section-tooltip-trigger" role="button" tabindex="0" data-section-tooltip="Modernization work remains governable only when rollback expectations, release conditions, and recovery decisions stay attached to the change as it moves forward.">What recovery posture should move with the work?</strong>
+        </article>
+      </div>
+    </section>
+  </section>
+
+</section>

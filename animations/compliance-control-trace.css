@@ -1,0 +1,361 @@
+/* NeurHAL Compliance Readiness animation module. */
+
+.cert-control-animation {
+  --trace-cursor-x: clamp(9rem, 38vw, 21rem);
+  background:
+    radial-gradient(circle at 72% 50%, rgba(217, 197, 121, 0.09), transparent 4.8rem),
+    linear-gradient(90deg, rgba(112, 242, 210, 0.055), transparent 38%),
+    rgba(5, 9, 13, 0.48);
+  background-size: auto;
+}
+
+.trace-register {
+  z-index: 1;
+  top: 1.02rem;
+  right: 8%;
+  bottom: 1.02rem;
+  left: 31%;
+  overflow: hidden;
+  border: 1px solid rgba(112, 242, 210, 0.18);
+  border-radius: 9px;
+  background:
+    linear-gradient(90deg, transparent 0 34%, rgba(112, 242, 210, 0.14) 34% 35%, transparent 35% 68%, rgba(217, 197, 121, 0.16) 68% 69%, transparent 69%),
+    linear-gradient(180deg, transparent 0 28%, rgba(174, 229, 215, 0.1) 28% 29%, transparent 29% 50%, rgba(174, 229, 215, 0.08) 50% 51%, transparent 51% 72%, rgba(217, 197, 121, 0.12) 72% 73%, transparent 73%),
+    rgba(6, 9, 13, 0.74);
+  box-shadow: inset 0 0 22px rgba(112, 242, 210, 0.045);
+  animation: traceRegisterFocus 8.8s ease-in-out infinite;
+}
+
+.trace-register::before {
+  content: "";
+  position: absolute;
+  inset: 0.62rem;
+  border: 1px solid rgba(217, 197, 121, 0.13);
+  border-radius: 6px;
+}
+
+.trace-claim {
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  top: calc(50% - 0.72rem);
+  left: 7%;
+  width: 4.5rem;
+  height: 1.44rem;
+  border: 1px solid rgba(244, 251, 248, 0.24);
+  border-radius: 999px;
+  color: var(--text);
+  background:
+    linear-gradient(90deg, rgba(112, 242, 210, 0.15), transparent),
+    rgba(6, 9, 13, 0.9);
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  box-shadow: 0 0 18px rgba(112, 242, 210, 0.12);
+  animation: traceClaimLoad 8.8s ease-in-out infinite;
+}
+
+.trace-row {
+  z-index: 3;
+  left: 39%;
+  right: 15%;
+  height: 1.04rem;
+  overflow: hidden;
+  border: 1px solid rgba(174, 229, 215, 0.14);
+  border-radius: 5px;
+  background: rgba(6, 9, 13, 0.82);
+  animation: traceRowResolve 8.8s ease-in-out infinite;
+}
+
+.trace-row::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 0.48rem;
+  color: var(--soft);
+  font-family: var(--mono);
+  font-size: 0.46rem;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+}
+
+.trace-row i {
+  display: block;
+  position: absolute;
+  top: 0.32rem;
+  right: 0.46rem;
+  left: clamp(3.85rem, 39%, 5.2rem);
+  height: 0.34rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(112, 242, 210, 0.72), rgba(217, 197, 121, 0.62));
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: traceRowFill 8.8s ease-in-out infinite;
+}
+
+.trace-row-scope {
+  top: 1.68rem;
+}
+
+.trace-row-evidence {
+  top: 4.18rem;
+  animation-delay: 160ms;
+}
+
+.trace-row-evidence i {
+  animation-delay: 160ms;
+}
+
+.trace-row-owner {
+  top: 6.68rem;
+  border-color: rgba(217, 197, 121, 0.2);
+  animation-delay: 320ms;
+}
+
+.trace-row-owner i {
+  animation-delay: 320ms;
+}
+
+.trace-thread {
+  z-index: 2;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(112, 242, 210, 0.1), rgba(217, 197, 121, 0.72), rgba(112, 242, 210, 0.1));
+  opacity: 0;
+  transform-origin: left center;
+  animation: traceThreadDraw 8.8s ease-in-out infinite;
+}
+
+.trace-thread-scope {
+  top: 2.2rem;
+  left: 25%;
+  width: 18%;
+  transform: rotate(-18deg);
+}
+
+.trace-thread-evidence {
+  top: 4.73rem;
+  left: 25%;
+  width: 18%;
+  transform: rotate(0deg);
+  animation-delay: 160ms;
+}
+
+.trace-thread-owner {
+  top: 6.96rem;
+  left: 25%;
+  width: 18%;
+  transform: rotate(18deg);
+  animation-delay: 320ms;
+}
+
+.trace-cursor {
+  z-index: 4;
+  top: 1.36rem;
+  left: 35.5%;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid rgba(244, 251, 248, 0.56);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(112, 242, 210, 0.32);
+  opacity: 0;
+  animation: traceCursorScan 8.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.trace-verdict {
+  z-index: 5;
+  right: 8.2%;
+  top: calc(50% - 0.88rem);
+  width: 1.76rem;
+  height: 1.76rem;
+  border: 1px solid rgba(217, 197, 121, 0.62);
+  border-radius: 6px;
+  background: rgba(217, 197, 121, 0.1);
+  box-shadow: 0 0 18px rgba(217, 197, 121, 0.16);
+  opacity: 0;
+  animation: traceVerdictResolve 8.8s ease-in-out infinite;
+}
+
+.trace-verdict::before,
+.trace-verdict::after {
+  content: "";
+  background: rgba(244, 251, 248, 0.92);
+  border-radius: 999px;
+}
+
+.trace-verdict::before {
+  top: 0.82rem;
+  left: 0.4rem;
+  width: 0.42rem;
+  height: 0.14rem;
+  transform: rotate(45deg);
+}
+
+.trace-verdict::after {
+  top: 0.7rem;
+  left: 0.66rem;
+  width: 0.66rem;
+  height: 0.14rem;
+  transform: rotate(-48deg);
+}
+
+@keyframes traceRegisterFocus {
+  0%,
+  99.01%,
+  100% {
+    border-color: rgba(112, 242, 210, 0.14);
+    box-shadow: inset 0 0 0 rgba(112, 242, 210, 0);
+  }
+  42%,
+  99% {
+    border-color: rgba(217, 197, 121, 0.34);
+    box-shadow: inset 0 0 20px rgba(217, 197, 121, 0.055);
+  }
+}
+
+@keyframes traceClaimLoad {
+  0%,
+  99.01%,
+  100% {
+    border-color: rgba(244, 251, 248, 0.22);
+    transform: translateX(0) scale(0.96);
+  }
+  26%,
+  99% {
+    border-color: rgba(112, 242, 210, 0.48);
+    box-shadow: 0 0 18px rgba(112, 242, 210, 0.18);
+    transform: translateX(0.18rem) scale(1);
+  }
+}
+
+@keyframes traceRowResolve {
+  0%,
+  99.01%,
+  100% {
+    border-color: rgba(174, 229, 215, 0.14);
+    transform: translateY(0);
+  }
+  38%,
+  99% {
+    border-color: rgba(217, 197, 121, 0.36);
+    box-shadow: 0 0 14px rgba(217, 197, 121, 0.1);
+    transform: translateY(-0.03rem);
+  }
+}
+
+@keyframes traceRowFill {
+  0%,
+  36%,
+  99.01%,
+  100% {
+    transform: scaleX(0);
+  }
+  62%,
+  99% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes traceThreadDraw {
+  0%,
+  28%,
+  99.01%,
+  100% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  48%,
+  99% {
+    opacity: 0.82;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes traceCursorScan {
+  0%,
+  24%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.66);
+  }
+  36% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  56% {
+    opacity: 1;
+    transform: translate(var(--trace-cursor-x), 2.48rem) scale(0.9);
+  }
+  78% {
+    opacity: 0.74;
+    transform: translate(var(--trace-cursor-x), 5rem) scale(0.76);
+  }
+  92% {
+    opacity: 0;
+    transform: translate(var(--trace-cursor-x), 5rem) scale(0.58);
+  }
+}
+
+@keyframes traceVerdictResolve {
+  0%,
+  66%,
+  99.01%,
+  100% {
+    opacity: 0;
+    transform: scale(0.68);
+  }
+  78%,
+  99% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .cert-control-animation {
+    --trace-cursor-x: clamp(6.2rem, 31vw, 12rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .trace-register {
+    right: 5%;
+    left: 34%;
+  }
+
+  .trace-claim {
+    left: 5%;
+    width: 3.6rem;
+    font-size: 0.46rem;
+  }
+
+  .trace-row {
+    left: 42%;
+    right: 6%;
+  }
+
+  .trace-row::before {
+    left: 0.38rem;
+    font-size: 0.42rem;
+  }
+
+  .trace-row i {
+    left: clamp(3.25rem, 46%, 4.15rem);
+  }
+
+  .trace-thread {
+    left: 24%;
+    width: 20%;
+  }
+
+  .trace-verdict {
+    right: 5.5%;
+    width: 1.44rem;
+    height: 1.44rem;
+  }
+}

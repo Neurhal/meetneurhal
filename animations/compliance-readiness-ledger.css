@@ -1,0 +1,559 @@
+/* NeurHAL Compliance Readiness: rubber stamp closeout animation. */
+
+.certification-ledger-lab {
+  position: relative;
+  z-index: 1;
+  align-self: stretch;
+  min-height: 13.4rem;
+  margin: 0;
+  overflow: hidden;
+  border-width: 1px 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 70% 44%, rgba(217, 197, 121, 0.14), transparent 5rem),
+    radial-gradient(circle at 26% 72%, rgba(112, 242, 210, 0.1), transparent 4.8rem),
+    linear-gradient(rgba(174, 229, 215, 0.034) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(174, 229, 215, 0.024) 1px, transparent 1px),
+    rgba(5, 9, 13, 0.5);
+  background-size: auto, auto, 1.05rem 1.05rem, 1.05rem 1.05rem, auto;
+}
+
+.certification-close-card .research-finish-grid {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.certification-close-card .research-finish-grid article {
+  position: relative;
+}
+
+.certification-close-card .research-finish-grid article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: var(--certification-close-color, var(--accent));
+  opacity: 0.82;
+}
+
+.certification-close-card .research-finish-grid article:nth-child(1) {
+  --certification-close-color: var(--accent);
+}
+
+.certification-close-card .research-finish-grid article:nth-child(2) {
+  --certification-close-color: var(--accent-2);
+}
+
+.certification-close-card .research-finish-grid article:nth-child(3) {
+  --certification-close-color: var(--danger);
+}
+
+.certification-close-card .research-finish-grid article:nth-child(4) {
+  --certification-close-color: var(--neon-pink);
+}
+
+.certification-ledger-lab::before,
+.certification-ledger-lab::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.certification-ledger-lab::before {
+  background:
+    linear-gradient(90deg, transparent, rgba(244, 251, 248, 0.07), transparent),
+    linear-gradient(115deg, transparent 40%, rgba(217, 197, 121, 0.11) 41%, transparent 44%);
+  opacity: 0.4;
+  animation: stampFieldSweep 8.4s ease-in-out infinite;
+}
+
+.certification-ledger-lab::after {
+  border-top: 1px solid rgba(217, 197, 121, 0.2);
+  border-bottom: 1px solid rgba(112, 242, 210, 0.12);
+  opacity: 0.75;
+}
+
+.certification-ledger-lab > span,
+.certification-ledger-lab > span::before,
+.certification-ledger-lab > span::after {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.stamp-document {
+  left: 50%;
+  bottom: 1.05rem;
+  width: min(30rem, calc(100% - 2rem));
+  height: 9.15rem;
+  border: 1px solid rgba(217, 197, 121, 0.28);
+  border-radius: 9px;
+  background:
+    linear-gradient(180deg, rgba(244, 251, 248, 0.09), transparent 16%),
+    radial-gradient(circle at 88% 73%, rgba(217, 197, 121, 0.13), transparent 3rem),
+    repeating-linear-gradient(0deg, transparent 0 1.04rem, rgba(174, 229, 215, 0.055) 1.04rem 1.1rem),
+    rgba(6, 9, 13, 0.78);
+  box-shadow:
+    inset 0 0 0 0.34rem rgba(217, 197, 121, 0.035),
+    inset 0 0 34px rgba(112, 242, 210, 0.04),
+    0 20px 38px rgba(0, 0, 0, 0.22);
+  transform: translateX(-50%);
+  animation: stampPaperSettle 8.4s ease-in-out infinite;
+}
+
+.stamp-document::before {
+  content: "";
+  inset: 0.62rem;
+  border: 1px solid rgba(217, 197, 121, 0.2);
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, rgba(217, 197, 121, 0.18) 0 3.2rem, transparent 3.2rem calc(100% - 3.2rem), rgba(217, 197, 121, 0.18) calc(100% - 3.2rem)),
+    linear-gradient(180deg, rgba(217, 197, 121, 0.14) 0 1px, transparent 1px calc(100% - 1px), rgba(217, 197, 121, 0.14) calc(100% - 1px));
+  opacity: 0.9;
+}
+
+.stamp-document::after {
+  content: "";
+  right: 1.12rem;
+  top: 0.92rem;
+  width: 1.42rem;
+  height: 1.42rem;
+  border: 1px solid rgba(217, 197, 121, 0.5);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(217, 197, 121, 0.3) 0 24%, transparent 27%),
+    repeating-conic-gradient(from 0deg, rgba(217, 197, 121, 0.3) 0 10deg, transparent 10deg 20deg),
+    rgba(217, 197, 121, 0.08);
+  box-shadow: 0 0 16px rgba(217, 197, 121, 0.13);
+}
+
+.stamp-document b {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  max-width: calc(100% - 4.4rem);
+  color: var(--accent-2);
+  font-family: var(--mono);
+  font-size: clamp(0.58rem, 1vw, 0.82rem);
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(217, 197, 121, 0.18);
+}
+
+.stamp-document b::after {
+  content: "Runtime assurance record";
+  display: block;
+  margin-top: 0.28rem;
+  color: rgba(244, 251, 248, 0.58);
+  font-size: 0.46rem;
+  font-weight: 820;
+  letter-spacing: 0.08em;
+}
+
+.stamp-document i {
+  display: block;
+  position: absolute;
+  left: 1rem;
+  right: 1.2rem;
+  height: 0.7rem;
+  border-bottom: 1px solid rgba(174, 229, 215, 0.18);
+  color: rgba(244, 251, 248, 0.58);
+  font-family: var(--mono);
+  font-size: 0.43rem;
+  font-weight: 820;
+  letter-spacing: 0.06em;
+  line-height: 0.7rem;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.stamp-document i:nth-of-type(1) {
+  top: 2.9rem;
+}
+
+.stamp-document i:nth-of-type(1)::before {
+  content: "Claim:";
+}
+
+.stamp-document i:nth-of-type(2) {
+  top: 4rem;
+}
+
+.stamp-document i:nth-of-type(2)::before {
+  content: "Evidence:";
+}
+
+.stamp-document i:nth-of-type(3) {
+  top: 5.1rem;
+}
+
+.stamp-document i:nth-of-type(3)::before {
+  content: "Boundary:";
+}
+
+.stamp-document i:nth-of-type(4) {
+  top: 6.2rem;
+  right: 11.5rem;
+}
+
+.stamp-document i:nth-of-type(4)::before {
+  content: "Reviewer:";
+}
+
+.stamp-document i:nth-of-type(5) {
+  top: 6.2rem;
+  left: calc(100% - 10.2rem);
+  right: 1.2rem;
+}
+
+.stamp-document i:nth-of-type(5)::before {
+  content: "Date:";
+}
+
+.stamp-document i::after {
+  content: "";
+  position: absolute;
+  top: 0.18rem;
+  right: 0;
+  width: 0.52rem;
+  height: 0.52rem;
+  border: 1px solid rgba(112, 242, 210, 0.26);
+  border-radius: 3px;
+  background:
+    linear-gradient(135deg, transparent 48%, rgba(112, 242, 210, 0.52) 49% 58%, transparent 59%),
+    rgba(112, 242, 210, 0.05);
+  opacity: 0.72;
+}
+
+.stamp-certificate-seal {
+  right: 1.32rem;
+  bottom: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(217, 197, 121, 0.58);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(217, 197, 121, 0.22) 0 34%, transparent 36%),
+    repeating-conic-gradient(from 0deg, rgba(217, 197, 121, 0.32) 0 8deg, transparent 8deg 16deg),
+    rgba(217, 197, 121, 0.08);
+}
+
+.stamp-certificate-ribbon {
+  right: 1.82rem;
+  bottom: 0.68rem;
+  width: 0.92rem;
+  height: 1.15rem;
+  background:
+    linear-gradient(140deg, transparent 0 32%, rgba(217, 197, 121, 0.42) 33% 68%, transparent 69%),
+    linear-gradient(220deg, transparent 0 32%, rgba(112, 242, 210, 0.28) 33% 68%, transparent 69%);
+  clip-path: polygon(0 0, 100% 0, 82% 100%, 50% 72%, 18% 100%);
+}
+
+.stamp-head {
+  left: 50%;
+  top: 1.42rem;
+  width: 7rem;
+  height: 3.05rem;
+  border: 1px solid rgba(217, 197, 121, 0.68);
+  border-radius: 11px;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(244, 251, 248, 0.22), transparent 2.4rem),
+    linear-gradient(180deg, rgba(217, 197, 121, 0.28), rgba(6, 9, 13, 0.22) 74%),
+    rgba(217, 197, 121, 0.22);
+  box-shadow:
+    inset 0 -0.72rem 0 rgba(3, 7, 10, 0.34),
+    inset 0 0.2rem 0 rgba(244, 251, 248, 0.12),
+    0 18px 34px rgba(0, 0, 0, 0.18);
+  transform-origin: 50% 10%;
+  animation: stampPress 8.4s cubic-bezier(0.48, 0, 0.22, 1) infinite;
+}
+
+.stamp-head::before {
+  content: "REVIEW";
+  top: 0.58rem;
+  left: 0.78rem;
+  right: 0.78rem;
+  display: grid;
+  place-items: center;
+  height: 1rem;
+  border: 1px solid rgba(244, 251, 248, 0.12);
+  border-radius: 999px;
+  color: rgba(244, 251, 248, 0.72);
+  font-family: var(--mono);
+  font-size: 0.46rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+}
+
+.stamp-head::after {
+  content: "";
+  left: 0.58rem;
+  right: 0.58rem;
+  bottom: -0.58rem;
+  height: 0.64rem;
+  border: 1px solid rgba(112, 242, 210, 0.34);
+  border-radius: 0 0 7px 7px;
+  background:
+    linear-gradient(180deg, rgba(112, 242, 210, 0.24), rgba(6, 9, 13, 0.62)),
+    rgba(112, 242, 210, 0.14);
+}
+
+.stamp-pad {
+  left: 50%;
+  top: 5.18rem;
+  width: 6.25rem;
+  height: 0.44rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(112, 242, 210, 0.6), rgba(217, 197, 121, 0.48), transparent);
+  opacity: 0.2;
+  transform: translateX(-50%);
+  animation: stampInkPulse 8.4s ease-in-out infinite;
+}
+
+.stamp-contact-shadow {
+  left: 50%;
+  bottom: 3.02rem;
+  width: 6.1rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.48), transparent 70%);
+  opacity: 0;
+  transform: translateX(-50%) scaleX(0.55);
+  animation: stampContactShadow 8.4s ease-in-out infinite;
+}
+
+.stamp-imprint {
+  left: 50%;
+  bottom: 1.88rem;
+  display: grid;
+  place-items: center;
+  width: 5.9rem;
+  height: 2.55rem;
+  border: 2px solid rgba(112, 242, 210, 0.68);
+  border-radius: 50%;
+  color: var(--accent);
+  background: rgba(112, 242, 210, 0.035);
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 950;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-50%) rotate(-8deg) scale(0.76);
+  animation: stampImprintAppear 8.4s ease-in-out infinite;
+}
+
+.stamp-imprint::before,
+.stamp-imprint::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.stamp-imprint::before {
+  inset: 0.32rem;
+  border: 1px solid rgba(112, 242, 210, 0.44);
+}
+
+.stamp-imprint::after {
+  inset: -0.44rem;
+  border: 1px solid rgba(217, 197, 121, 0.22);
+  opacity: 0.55;
+}
+
+.stamp-impact {
+  left: 50%;
+  bottom: 3rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: rgba(217, 197, 121, 0.68);
+  box-shadow: 0 0 0 0 rgba(217, 197, 121, 0.22);
+  opacity: 0;
+  transform: translateX(-50%) scale(0.7);
+  animation: stampImpactRing 8.4s ease-out infinite;
+}
+
+@keyframes stampFieldSweep {
+  0%,
+  100% {
+    opacity: 0.14;
+    transform: translateX(-16%);
+  }
+  42%,
+  72% {
+    opacity: 0.48;
+    transform: translateX(14%);
+  }
+}
+
+@keyframes stampPaperSettle {
+  0%,
+  48%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  54%,
+  59% {
+    transform: translateX(-50%) translateY(0.12rem);
+  }
+}
+
+@keyframes stampPress {
+  0%,
+  34%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(-2deg);
+  }
+  48% {
+    transform: translateX(-50%) translateY(4.78rem) rotate(-2deg);
+  }
+  53% {
+    transform: translateX(-50%) translateY(5.12rem) rotate(-2deg) scaleY(0.94);
+  }
+  61%,
+  72% {
+    transform: translateX(-50%) translateY(1.1rem) rotate(-2deg);
+  }
+}
+
+@keyframes stampInkPulse {
+  0%,
+  40%,
+  100% {
+    opacity: 0.18;
+    transform: translateX(-50%) scaleX(0.72);
+  }
+  50%,
+  62% {
+    opacity: 0.88;
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+@keyframes stampImprintAppear {
+  0%,
+  48%,
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) rotate(-8deg) scale(0.76);
+  }
+  56%,
+  86% {
+    opacity: 0.94;
+    transform: translateX(-50%) rotate(-8deg) scale(1);
+  }
+}
+
+@keyframes stampContactShadow {
+  0%,
+  44%,
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0.55);
+  }
+  51%,
+  58% {
+    opacity: 0.72;
+    transform: translateX(-50%) scaleX(1);
+  }
+  76% {
+    opacity: 0.22;
+    transform: translateX(-50%) scaleX(0.82);
+  }
+}
+
+@keyframes stampImpactRing {
+  0%,
+  49%,
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 rgba(217, 197, 121, 0.22);
+    transform: translateX(-50%) scale(0.7);
+  }
+  53% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 0 rgba(217, 197, 121, 0.28);
+    transform: translateX(-50%) scale(1);
+  }
+  68% {
+    opacity: 0;
+    box-shadow: 0 0 0 2.6rem rgba(217, 197, 121, 0);
+    transform: translateX(-50%) scale(1.2);
+  }
+}
+
+@media (max-width: 900px) {
+  .certification-close-card .research-finish-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .certification-ledger-lab {
+    min-height: 15.7rem;
+  }
+
+  .stamp-document {
+    left: 50%;
+    width: calc(100% - 1.44rem);
+    bottom: 1rem;
+    height: 8.85rem;
+  }
+
+  .stamp-head {
+    left: 50%;
+    right: auto;
+    top: 1.14rem;
+    width: 6.15rem;
+  }
+
+  .stamp-pad {
+    left: 50%;
+    right: auto;
+    top: 5rem;
+    width: 5.6rem;
+  }
+
+  .stamp-contact-shadow {
+    left: 50%;
+    right: auto;
+    bottom: 3.16rem;
+  }
+
+  .stamp-imprint {
+    left: 50%;
+    right: auto;
+    bottom: 2.08rem;
+    width: 5.15rem;
+    font-size: 0.47rem;
+  }
+
+  .stamp-impact {
+    left: 50%;
+    right: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certification-ledger-lab::before,
+  .stamp-document,
+  .stamp-head,
+  .stamp-pad,
+  .stamp-contact-shadow,
+  .stamp-imprint,
+  .stamp-impact {
+    animation: none;
+  }
+
+  .stamp-imprint {
+    opacity: 0.9;
+    transform: none;
+  }
+}

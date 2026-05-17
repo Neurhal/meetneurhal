@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Applied research on runtime assurance infrastructure for AI-assisted workflows: bounded execution, evidence continuity, authority boundaries, operational reviewability, and recovery-aware orchestration.">
+    <meta name="application-name" content="NeurHAL">
+    <meta name="color-scheme" content="dark">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#06090d">
+    <meta property="og:description" content="A small senior applied research and engineering group studying operational assurance infrastructure for AI-assisted workflows.">
+    <meta property="og:site_name" content="NeurHAL.NET">
+    <meta property="og:title" content="NeurHAL | Operational Assurance Research">
+    <meta property="og:type" content="website">
+    <title>NeurHAL | Operational Assurance Research</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-rail">
+      <a class="brand" href="#meet" data-route="meet" aria-label="Meet NeurHAL">
+        <span class="brand-hexring" aria-hidden="true">
+          <svg viewBox="-4 -4 108 108" role="img" focusable="false">
+            <defs>
+              <linearGradient id="brand-hexring-a" x1="15" y1="12" x2="86" y2="88">
+                <stop offset="0%" stop-color="#70f2d2"></stop>
+                <stop offset="52%" stop-color="#d9c579"></stop>
+                <stop offset="100%" stop-color="#8ea7ff"></stop>
+              </linearGradient>
+              <linearGradient id="brand-hexring-b" x1="82" y1="14" x2="18" y2="86">
+                <stop offset="0%" stop-color="#f4fbf8"></stop>
+                <stop offset="51%" stop-color="#70f2d2"></stop>
+                <stop offset="100%" stop-color="#d9c579"></stop>
+              </linearGradient>
+            </defs>
+            <path class="hexring-shell" d="M88 28 88 72 50 94 12 72 12 28 50 6Z"></path>
+            <circle class="hexring-ring hexring-ring-a" cx="50" cy="50" r="31"></circle>
+            <circle class="hexring-ring hexring-ring-b" cx="50" cy="50" r="22"></circle>
+            <g class="hexring-nucleus-spin">
+              <path class="hexring-nucleus" d="M50 35.8 57.8 39.8 63.4 46.7 62.2 55.2 55.9 62.1 47.6 63.4 39.8 59.5 35.5 51.6 37.4 43.2 43.1 37.3Z"></path>
+            </g>
+          </svg>
+        </span>
+        <span>
+          <strong>NeurHAL.NET</strong>
+          <small>The NeurHAL&reg; Network<br>Acceleration Group</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#meet" data-route="meet">Meet NeurHAL</a>
+        <a href="#trustworthy" data-route="trustworthy">Runtime Governance</a>
+        <a href="#compliance" data-route="compliance">Compliance Readiness</a>
+        <a href="#sentinel" data-route="sentinel">Vulnerability Assessment</a>
+        <a href="#codebase" data-route="codebase">Codebase Optimization</a>
+      </nav>
+      <label class="mobile-route-picker" aria-label="Choose page">
+        <select id="mobile-route-select">
+          <option value="meet">Meet NeurHAL</option>
+          <option value="trustworthy">Runtime Governance</option>
+          <option value="compliance">Compliance Readiness</option>
+          <option value="sentinel">Vulnerability Assessment</option>
+          <option value="codebase">Codebase Optimization</option>
+          <option value="contact">Contact Us</option>
+        </select>
+      </label>
+      <button class="header-cta" id="research-contact-trigger" type="button" aria-haspopup="dialog" aria-controls="research-contact-modal">Contact Us</button>
+    </header>
+
+    <main class="site-main" id="page-host" aria-live="polite">
+      <noscript>
+        <section class="page is-active">
+          <section class="page-hero">
+            <h1 class="eyebrow">NeurHAL.NET</h1>
+            <p>This site uses lightweight hash navigation. Enable JavaScript to load the research pages.</p>
+          </section>
+        </section>
+      </noscript>
+    </main>
+
+    <section class="modal-backdrop" id="research-contact-modal" role="dialog" aria-modal="true" aria-labelledby="research-contact-title" aria-describedby="research-contact-description" hidden>
+      <div class="contact-modal-panel">
+        <div class="contact-modal-header">
+          <h2 class="eyebrow" id="research-contact-title">Contact us</h2>
+          <button class="modal-close" type="button" aria-label="Close contact form" data-contact-close></button>
+        </div>
+        <p id="research-contact-description">
+          Request a study brief, artifact review, grant alignment discussion, bounded workflow evaluation, or
+          runtime assurance collaboration. The form prepares an email draft with enough context to route the inquiry
+          by study fit, artifact maturity, partner type, and evaluation focus.
+        </p>
+        <form class="contact-form" id="research-contact-form">
+          <label>
+            <span>Name</span>
+            <input name="name" autocomplete="name" maxlength="120" required>
+          </label>
+          <label>
+            <span>Work email</span>
+            <input name="email" type="email" autocomplete="email" maxlength="254" required>
+          </label>
+          <label>
+            <span>Organization</span>
+            <input name="organization" autocomplete="organization" maxlength="160">
+          </label>
+          <label>
+            <span>Role / title</span>
+            <input name="role" autocomplete="organization-title" maxlength="120">
+          </label>
+          <label class="form-wide">
+            <span>Inquiry focus</span>
+            <select name="interest">
+              <option>Study brief</option>
+              <option>Artifact review</option>
+              <option>Grant alignment</option>
+              <option>Workflow evaluation</option>
+              <option>Research partnership</option>
+              <option>Infrastructure or compute support</option>
+            </select>
+          </label>
+          <label class="form-wide">
+            <span>What would you like to review?</span>
+            <textarea
+              name="message"
+              rows="5"
+              maxlength="1800"
+              placeholder="Briefly describe the workflow, study question, artifact review, grant program, or evaluation fit you want to discuss."
+              required
+            ></textarea>
+            <small class="field-guidance">Limit 1,800 characters. Keep the initial inquiry high-level; detailed materials can follow after initial contact.</small>
+          </label>
+          <div class="cta-row">
+            <button class="button primary" type="submit">Open study inquiry draft</button>
+            <button class="button secondary" type="button" data-contact-close>Cancel</button>
+            <div class="privacy-disclosure">
+              <button
+                class="privacy-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="contact-privacy-panel"
+                data-privacy-trigger
+              >Data privacy</button>
+              <div class="privacy-popover" id="contact-privacy-panel" role="note" data-privacy-panel hidden>
+                <h3>Security and privacy disclosure</h3>
+                <p>
+                  This website is a static public site. The contact form does not submit to a NeurHAL server, set
+                  cookies, use analytics, call a remote form endpoint, or store inquiry data in browser storage.
+                </p>
+                <p>
+                  When you select <strong>Open study inquiry draft</strong>, the page creates a mailto draft in your
+                  email client using the fields you entered. You can review, edit, or discard that draft before sending.
+                  Email delivery, retention, scanning, and metadata are then handled by your email provider, any
+                  intermediate mail systems, and the receiving mailbox.
+                </p>
+                <ul>
+                  <li>Do not include passwords, API keys, private keys, tokens, seed phrases, credentials, or production secrets.</li>
+                  <li>Do not include exploit code, live vulnerability details, customer records, regulated data, export-controlled material, or confidential architecture diagrams in the initial inquiry.</li>
+                  <li>Use the form for high-level routing only: organization, role, inquiry focus, and a brief non-sensitive summary.</li>
+                  <li>Detailed materials should move through an agreed review channel with appropriate authorization, confidentiality terms, and handling expectations.</li>
+                </ul>
+                <p>
+                  Normal hosting infrastructure may still receive ordinary request metadata when this page is loaded.
+                  Once an email is sent, message handling moves outside the website's control.
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

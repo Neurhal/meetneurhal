@@ -1,0 +1,547 @@
+/* NeurHAL Compliance Readiness: review gate confidence animation module. */
+
+.cert-gate-animation {
+  --gate-mid-x: clamp(5.8rem, 24vw, 13.2rem);
+  --gate-final-x: clamp(13rem, 50vw, 27.6rem);
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 72% 44%, rgba(217, 197, 121, 0.13), transparent 4.2rem),
+    radial-gradient(circle at 30% 56%, rgba(112, 242, 210, 0.1), transparent 4rem),
+    linear-gradient(rgba(174, 229, 215, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(174, 229, 215, 0.025) 1px, transparent 1px),
+    rgba(5, 9, 13, 0.56);
+  background-size: auto, auto, 1rem 1rem, 1rem 1rem, auto;
+}
+
+.gate-intake-rail {
+  z-index: 1;
+  top: 4.78rem;
+  left: 7%;
+  right: 9%;
+  height: 1px;
+  background:
+    linear-gradient(90deg, transparent, rgba(112, 242, 210, 0.6) 18%, rgba(217, 197, 121, 0.72) 62%, transparent),
+    rgba(174, 229, 215, 0.05);
+  opacity: 0.74;
+}
+
+.gate-intake-rail::before,
+.gate-intake-rail::after {
+  content: "";
+  position: absolute;
+  top: -0.22rem;
+  width: 0.46rem;
+  height: 0.46rem;
+  border: 1px solid rgba(112, 242, 210, 0.38);
+  border-radius: 50%;
+  background: rgba(6, 9, 13, 0.92);
+  box-shadow: 0 0 12px rgba(112, 242, 210, 0.12);
+}
+
+.gate-intake-rail::before {
+  left: 7%;
+}
+
+.gate-intake-rail::after {
+  right: 11%;
+  border-color: rgba(217, 197, 121, 0.46);
+}
+
+.gate-record-packet {
+  z-index: 5;
+  top: 3.52rem;
+  left: 8%;
+  width: 3.8rem;
+  height: 2.28rem;
+  border: 1px solid rgba(244, 251, 248, 0.22);
+  border-radius: 7px;
+  background:
+    linear-gradient(135deg, rgba(244, 251, 248, 0.14), transparent 48%),
+    linear-gradient(180deg, rgba(112, 242, 210, 0.11), transparent),
+    rgba(6, 9, 13, 0.92);
+  animation: gatePacketTravel 9.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.gate-record-packet::before {
+  content: "";
+  position: absolute;
+  top: 0.34rem;
+  left: 0.38rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  border: 1px solid rgba(217, 197, 121, 0.52);
+  border-radius: 3px;
+  background: rgba(217, 197, 121, 0.11);
+}
+
+.gate-record-packet::after {
+  content: "";
+  position: absolute;
+  top: 0.48rem;
+  right: 0.44rem;
+  width: 1.8rem;
+  height: 1px;
+  background:
+    linear-gradient(90deg, rgba(112, 242, 210, 0.72), transparent),
+    linear-gradient(180deg, transparent 0 0.34rem, rgba(174, 229, 215, 0.34) 0.34rem 0.4rem, transparent 0.4rem);
+  box-shadow:
+    0 0.48rem 0 rgba(174, 229, 215, 0.25),
+    0 0.94rem 0 rgba(174, 229, 215, 0.16);
+}
+
+.gate-record-packet i {
+  position: absolute;
+  bottom: 0.34rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border: 1px solid rgba(112, 242, 210, 0.46);
+  border-radius: 50%;
+  background: rgba(112, 242, 210, 0.12);
+}
+
+.gate-record-packet i:nth-child(1) {
+  left: 0.46rem;
+}
+
+.gate-record-packet i:nth-child(2) {
+  left: 1.08rem;
+  border-color: rgba(217, 197, 121, 0.48);
+  background: rgba(217, 197, 121, 0.1);
+}
+
+.gate-record-packet i:nth-child(3) {
+  left: 1.7rem;
+  border-color: rgba(255, 176, 185, 0.4);
+  background: rgba(255, 176, 185, 0.08);
+}
+
+.gate-review-chamber {
+  z-index: 3;
+  top: 1.12rem;
+  left: calc(50% - 3.2rem);
+  width: 6.4rem;
+  height: 7.18rem;
+  border: 1px solid rgba(174, 229, 215, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, transparent 0 46%, rgba(217, 197, 121, 0.13) 46% 54%, transparent 54%),
+    linear-gradient(180deg, rgba(244, 251, 248, 0.055), transparent),
+    rgba(6, 9, 13, 0.78);
+  animation: gateChamberRead 9.6s ease-in-out infinite;
+}
+
+.gate-review-chamber::before {
+  content: "";
+  position: absolute;
+  inset: 0.62rem;
+  border: 1px dashed rgba(112, 242, 210, 0.18);
+  border-radius: 6px;
+  opacity: 0.58;
+}
+
+.gate-review-chamber::after {
+  content: "";
+  position: absolute;
+  top: 0.82rem;
+  bottom: 0.82rem;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(217, 197, 121, 0.8), transparent);
+  opacity: 0;
+  transform: translateX(-50%) scaleY(0.4);
+  animation: gateScanLine 9.6s ease-in-out infinite;
+}
+
+.gate-check {
+  z-index: 4;
+  left: calc(50% - 2.34rem);
+  width: 4.68rem;
+  height: 1.04rem;
+  border: 1px solid rgba(174, 229, 215, 0.17);
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(112, 242, 210, 0.12), transparent),
+    rgba(5, 9, 13, 0.82);
+  color: rgba(244, 251, 248, 0.78);
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  line-height: 1.04rem;
+  text-align: center;
+  text-transform: uppercase;
+  animation: gateCheckResolve 9.6s ease-in-out infinite;
+}
+
+.gate-check::before {
+  content: attr(data-note);
+}
+
+.gate-check::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.52rem;
+  width: 0.42rem;
+  height: 0.23rem;
+  border-bottom: 2px solid rgba(112, 242, 210, 0.9);
+  border-left: 2px solid rgba(112, 242, 210, 0.9);
+  opacity: 0;
+  transform: translateY(-58%) rotate(-45deg) scale(0.62);
+  animation: gateCheckMark 9.6s ease-in-out infinite;
+}
+
+.gate-check-scope {
+  top: 2.1rem;
+}
+
+.gate-check-proof {
+  top: 3.78rem;
+  animation-delay: 220ms;
+}
+
+.gate-check-proof::after {
+  animation-delay: 220ms;
+}
+
+.gate-check-owner {
+  top: 5.46rem;
+  animation-delay: 440ms;
+}
+
+.gate-check-owner::after {
+  animation-delay: 440ms;
+}
+
+.gate-confidence-meter {
+  z-index: 4;
+  top: 7.08rem;
+  left: calc(50% - 2.34rem);
+  width: 4.68rem;
+  height: 0.44rem;
+  overflow: hidden;
+  border: 1px solid rgba(217, 197, 121, 0.26);
+  border-radius: 999px;
+  background: rgba(217, 197, 121, 0.06);
+}
+
+.gate-confidence-meter i {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0.08);
+  transform-origin: left center;
+  background:
+    linear-gradient(90deg, rgba(255, 176, 185, 0.86), rgba(217, 197, 121, 0.88) 42%, rgba(112, 242, 210, 0.92)),
+    rgba(112, 242, 210, 0.24);
+  animation: gateConfidenceFill 9.6s ease-in-out infinite;
+}
+
+.gate-hold-lane {
+  z-index: 2;
+  right: 13%;
+  bottom: 1.18rem;
+  width: 4.36rem;
+  height: 1.26rem;
+  border: 1px solid rgba(255, 176, 185, 0.24);
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(255, 176, 185, 0.13), transparent),
+    rgba(5, 9, 13, 0.74);
+  opacity: 0.2;
+  animation: gateHoldLane 9.6s ease-in-out infinite;
+}
+
+.gate-hold-lane::before {
+  content: "";
+  position: absolute;
+  top: 0.42rem;
+  left: 0.58rem;
+  right: 0.58rem;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(255, 176, 185, 0.6) 0 0.34rem, transparent 0.34rem 0.68rem);
+}
+
+.gate-decision-door {
+  z-index: 5;
+  top: 2.02rem;
+  right: 19%;
+  width: 0.62rem;
+  height: 5.34rem;
+  border: 1px solid rgba(217, 197, 121, 0.42);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(217, 197, 121, 0.42), transparent 42%, rgba(112, 242, 210, 0.34)),
+    rgba(217, 197, 121, 0.08);
+  transform-origin: center;
+  animation: gateDecisionDoor 9.6s ease-in-out infinite;
+}
+
+.gate-decision-card {
+  z-index: 4;
+  top: 3.4rem;
+  right: 7%;
+  width: 3.72rem;
+  height: 2.32rem;
+  border: 1px solid rgba(112, 242, 210, 0.28);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 76% 28%, rgba(112, 242, 210, 0.18), transparent 1.2rem),
+    linear-gradient(180deg, rgba(244, 251, 248, 0.095), transparent),
+    rgba(6, 9, 13, 0.9);
+  opacity: 0;
+  transform: translateX(-0.56rem) scale(0.82);
+  animation: gateDecisionCard 9.6s ease-in-out infinite;
+}
+
+.gate-decision-card::before {
+  content: "";
+  position: absolute;
+  top: 0.48rem;
+  left: 0.48rem;
+  width: 0.78rem;
+  height: 0.44rem;
+  border-bottom: 2px solid rgba(112, 242, 210, 0.9);
+  border-left: 2px solid rgba(112, 242, 210, 0.9);
+  transform: rotate(-45deg);
+}
+
+.gate-decision-card::after {
+  content: "";
+  position: absolute;
+  right: 0.48rem;
+  bottom: 0.52rem;
+  left: 0.48rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(112, 242, 210, 0.7), transparent);
+  box-shadow:
+    0 -0.48rem 0 rgba(174, 229, 215, 0.18),
+    0 -0.94rem 0 rgba(174, 229, 215, 0.1);
+}
+
+.gate-release-thread {
+  z-index: 1;
+  right: 7%;
+  bottom: 0.78rem;
+  width: 23%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(112, 242, 210, 0.82), transparent);
+  opacity: 0;
+  transform-origin: left center;
+  animation: gateReleaseThread 9.6s ease-in-out infinite;
+}
+
+@keyframes gatePacketTravel {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(0) scale(0.72);
+  }
+  9% {
+    opacity: 1;
+    transform: translateX(0) scale(0.92);
+  }
+  34% {
+    opacity: 1;
+    transform: translateX(var(--gate-mid-x)) scale(1);
+  }
+  62% {
+    opacity: 0.96;
+    transform: translateX(var(--gate-mid-x)) scale(0.94);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(var(--gate-final-x)) scale(0.74);
+  }
+  92% {
+    opacity: 0;
+    transform: translateX(var(--gate-final-x)) scale(0.62);
+  }
+}
+
+@keyframes gateChamberRead {
+  0%,
+  28%,
+  100% {
+    border-color: rgba(174, 229, 215, 0.18);
+    box-shadow: inset 0 0 0 rgba(112, 242, 210, 0);
+  }
+  42%,
+  72% {
+    border-color: rgba(217, 197, 121, 0.44);
+    box-shadow:
+      inset 0 0 22px rgba(217, 197, 121, 0.07),
+      0 0 14px rgba(112, 242, 210, 0.08);
+  }
+}
+
+@keyframes gateScanLine {
+  0%,
+  28%,
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0.34);
+  }
+  38%,
+  62% {
+    opacity: 0.74;
+    transform: translateX(-50%) scaleY(1);
+  }
+  72% {
+    opacity: 0.28;
+    transform: translateX(-50%) scaleY(0.58);
+  }
+}
+
+@keyframes gateCheckResolve {
+  0%,
+  30%,
+  100% {
+    border-color: rgba(174, 229, 215, 0.17);
+    color: rgba(244, 251, 248, 0.62);
+    transform: translateX(0);
+  }
+  48%,
+  76% {
+    border-color: rgba(112, 242, 210, 0.44);
+    color: var(--text);
+    transform: translateX(0.08rem);
+  }
+}
+
+@keyframes gateCheckMark {
+  0%,
+  38%,
+  100% {
+    opacity: 0;
+    transform: translateY(-58%) rotate(-45deg) scale(0.62);
+  }
+  54%,
+  78% {
+    opacity: 1;
+    transform: translateY(-58%) rotate(-45deg) scale(1);
+  }
+}
+
+@keyframes gateConfidenceFill {
+  0%,
+  28%,
+  100% {
+    opacity: 0.44;
+    transform: scaleX(0.08);
+  }
+  46% {
+    opacity: 0.74;
+    transform: scaleX(0.46);
+  }
+  64%,
+  82% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes gateHoldLane {
+  0%,
+  38%,
+  100% {
+    opacity: 0.18;
+    transform: translateY(0);
+  }
+  50%,
+  68% {
+    opacity: 0.7;
+    transform: translateY(-0.08rem);
+  }
+  78% {
+    opacity: 0.28;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gateDecisionDoor {
+  0%,
+  58%,
+  100% {
+    opacity: 0.74;
+    transform: scaleY(1);
+  }
+  72%,
+  88% {
+    opacity: 1;
+    transform: scaleY(0.68);
+  }
+}
+
+@keyframes gateDecisionCard {
+  0%,
+  64%,
+  100% {
+    opacity: 0;
+    transform: translateX(-0.56rem) scale(0.82);
+  }
+  76%,
+  90% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes gateReleaseThread {
+  0%,
+  72%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0.12);
+  }
+  84%,
+  92% {
+    opacity: 0.88;
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .cert-gate-animation {
+    --gate-mid-x: clamp(4.7rem, 22vw, 9rem);
+    --gate-final-x: clamp(8rem, 39vw, 15rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .gate-record-packet {
+    left: 5%;
+    width: 3.15rem;
+    height: 2.04rem;
+  }
+
+  .gate-review-chamber {
+    left: calc(50% - 2.55rem);
+    width: 5.1rem;
+  }
+
+  .gate-check {
+    left: calc(50% - 1.9rem);
+    width: 3.8rem;
+    font-size: 0.46rem;
+  }
+
+  .gate-confidence-meter {
+    left: calc(50% - 1.9rem);
+    width: 3.8rem;
+  }
+
+  .gate-hold-lane {
+    right: 7%;
+    width: 3.45rem;
+  }
+
+  .gate-decision-door {
+    right: 16%;
+  }
+
+  .gate-decision-card {
+    right: 4%;
+    width: 3rem;
+    height: 2rem;
+  }
+}

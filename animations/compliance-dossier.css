@@ -1,0 +1,258 @@
+/* NeurHAL Compliance Readiness animation module. */
+
+.cert-dossier-animation {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(217, 197, 121, 0.09), transparent 4.3rem),
+    rgba(5, 9, 13, 0.48);
+}
+
+.cert-folder {
+  z-index: 2;
+  top: 1.12rem;
+  left: calc(50% - 2.24rem);
+  width: 4.48rem;
+  height: 7.2rem;
+  overflow: hidden;
+  border: 1px solid rgba(217, 197, 121, 0.28);
+  border-radius: 9px;
+  background:
+    linear-gradient(90deg, transparent 0 46%, rgba(217, 197, 121, 0.2) 46% 54%, transparent 54%),
+    linear-gradient(180deg, rgba(244, 251, 248, 0.055), transparent 28%),
+    rgba(6, 9, 13, 0.78);
+  box-shadow:
+    inset 0 0 18px rgba(217, 197, 121, 0.04),
+    0 18px 28px rgba(0, 0, 0, 0.16);
+  animation: certFolderReceive 9s ease-in-out infinite;
+}
+
+.cert-folder::before {
+  content: "";
+  top: 0.58rem;
+  bottom: 0.58rem;
+  left: calc(50% - 1px);
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, transparent, rgba(244, 251, 248, 0.42), transparent);
+  opacity: 0.42;
+}
+
+.cert-folder::after {
+  content: "";
+  right: 0.52rem;
+  bottom: 0.56rem;
+  left: 0.52rem;
+  height: 0.44rem;
+  overflow: hidden;
+  border: 1px solid rgba(112, 242, 210, 0.2);
+  border-radius: 999px;
+  background: rgba(112, 242, 210, 0.045);
+}
+
+.cert-page {
+  z-index: 3;
+  left: var(--page-left, 8%);
+  top: var(--page-top, 1rem);
+  width: 3.78rem;
+  height: 0.92rem;
+  border: 1px solid rgba(244, 251, 248, 0.28);
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(112, 242, 210, 0.18), transparent 48%),
+    rgba(6, 9, 13, 0.9);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.14);
+  animation: certPageFile 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.cert-page-a {
+  --page-left: 8%;
+  --page-top: 1.2rem;
+  --page-final-left: calc(50% - 1.89rem);
+  --page-final-top: 2.15rem;
+  --page-rotate: 0deg;
+}
+
+.cert-page-b {
+  --page-left: 70%;
+  --page-top: 3.18rem;
+  --page-final-left: calc(50% - 1.89rem);
+  --page-final-top: 3.58rem;
+  --page-rotate: 0deg;
+  animation-delay: 240ms;
+}
+
+.cert-page-c {
+  --page-left: 11%;
+  --page-top: 6.72rem;
+  --page-final-left: calc(50% - 1.89rem);
+  --page-final-top: 5.01rem;
+  --page-rotate: 0deg;
+  animation-delay: 480ms;
+}
+
+.cert-bind {
+  z-index: 4;
+  top: 1.44rem;
+  left: calc(50% - 0.24rem);
+  width: 0.48rem;
+  height: 6.42rem;
+  overflow: hidden;
+  border: 1px solid rgba(112, 242, 210, 0.2);
+  border-radius: 999px;
+  background: rgba(112, 242, 210, 0.055);
+  opacity: 0;
+  animation: certBindFrame 9s ease-in-out infinite;
+}
+
+.cert-bind::before {
+  content: "";
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(112, 242, 210, 0.82), rgba(217, 197, 121, 0.7));
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: certBindFill 9s ease-in-out infinite;
+}
+
+.cert-seal {
+  z-index: 5;
+  left: calc(50% - 0.86rem);
+  bottom: 0.86rem;
+  width: 1.58rem;
+  height: 1.58rem;
+  border: 1px solid rgba(217, 197, 121, 0.62);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(217, 197, 121, 0.28) 0 28%, transparent 31%),
+    repeating-conic-gradient(from 0deg, rgba(217, 197, 121, 0.34) 0 10deg, transparent 10deg 20deg),
+    rgba(217, 197, 121, 0.08);
+  box-shadow: 0 0 18px rgba(217, 197, 121, 0.18);
+  opacity: 0;
+  animation: certSealResolve 9s ease-in-out infinite;
+}
+
+@keyframes certFolderReceive {
+  0%,
+  100% {
+    border-color: rgba(217, 197, 121, 0.24);
+    transform: translateY(0);
+  }
+  56%,
+  86% {
+    border-color: rgba(217, 197, 121, 0.54);
+    box-shadow:
+      inset 0 0 22px rgba(217, 197, 121, 0.08),
+      0 18px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.04rem);
+  }
+}
+
+@keyframes certPageFile {
+  0%,
+  100% {
+    opacity: 0;
+    left: var(--page-left);
+    top: var(--page-top);
+    transform: rotate(0deg) scale(0.82);
+  }
+  12% {
+    opacity: 1;
+  }
+  48%,
+  82% {
+    opacity: 0.92;
+    left: var(--page-final-left);
+    top: var(--page-final-top);
+    transform: rotate(var(--page-rotate)) scale(0.86);
+  }
+  94% {
+    opacity: 0;
+    left: var(--page-final-left);
+    top: var(--page-final-top);
+    transform: rotate(var(--page-rotate)) scale(0.74);
+  }
+}
+
+@keyframes certBindFrame {
+  0%,
+  48%,
+  100% {
+    opacity: 0;
+    transform: translateY(0.08rem) scaleY(0.72);
+  }
+  62%,
+  88% {
+    opacity: 0.86;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes certBindFill {
+  0%,
+  54%,
+  100% {
+    transform: scaleY(0);
+  }
+  76%,
+  88% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes certSealResolve {
+  0%,
+  70%,
+  100% {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.66);
+  }
+  82%,
+  92% {
+    opacity: 0.94;
+    transform: rotate(-10deg) scale(1);
+  }
+}
+
+@media (max-width: 520px) {
+  .cert-folder {
+    top: 0.92rem;
+    left: calc(50% - 1.84rem);
+    width: 3.68rem;
+    height: 5.92rem;
+  }
+
+  .cert-page {
+    width: 3.08rem;
+    height: 0.82rem;
+  }
+
+  .cert-page-a {
+    --page-left: 6%;
+    --page-final-left: calc(50% - 1.54rem);
+    --page-final-top: 1.82rem;
+  }
+
+  .cert-page-b {
+    --page-left: 68%;
+    --page-final-left: calc(50% - 1.54rem);
+    --page-final-top: 3rem;
+  }
+
+  .cert-page-c {
+    --page-left: 8%;
+    --page-top: 5.86rem;
+    --page-final-left: calc(50% - 1.54rem);
+    --page-final-top: 4.18rem;
+  }
+
+  .cert-bind {
+    top: 1.22rem;
+    height: 5.08rem;
+  }
+
+  .cert-seal {
+    width: 1.28rem;
+    height: 1.28rem;
+    left: calc(50% - 0.64rem);
+    bottom: 0.72rem;
+  }
+}
