@@ -800,7 +800,7 @@
       const formData = new FormData(contactForm);
       const subject = encodeURIComponent(`NeurHAL inquiry: ${formData.get("interest") || "Contact"}`);
       const body = encodeURIComponent(buildInquiryBody(formData));
-      const mailtoUrl = `mailto:founder@neurhal.net?subject=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:neurhal@gmail.com?subject=${subject}&body=${body}`;
       if (mailtoUrl.length > maxMailtoLength) {
         const messageField = contactForm.querySelector("textarea[name='message']");
         if (messageField) messageField.focus();
